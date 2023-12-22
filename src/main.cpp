@@ -41,7 +41,6 @@ void OW_read()
 {
 //0 for 1-15 us
 //ждём >15us 
-
 }
 void OW_write1()
 {
@@ -58,9 +57,8 @@ int main()
 {
     Thread worker_thread;
     worker_thread.start(mbed::callback(worker_thread_fun));
-
     while (true) {
-        ThisThread::sleep_for(1000);
+        ThisThread::sleep_for(100);
         event_flags.set(SAMPLE_FLAG1);
         ThisThread::sleep_for(500);
         event_flags.set(SAMPLE_FLAG2);
